@@ -4,9 +4,9 @@
 			<img alt="" src="https://github.com/RockyLim92/RocksDB_OCSSD_debug/blob/master/asset/rocky_icon.png" width="100px" height="100px" />
 		</a>
 		<br />
-		(Title) RockDB_OCSSD_debug
+		RockDB_OCSSD_debug
 	</h2>
-	<p align="center"> debug for crc mismatch error on db_bench</p>
+	:octocat:<p align="center"> debug for crc mismatch error on db_bench</p>
 
 <!-- Update to dynamic badges -->
 </div>
