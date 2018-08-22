@@ -6,7 +6,7 @@
 		<br />
 		RockDB_OCSSD_debug
 	</h2>
-	<p align="center">:octocat: debug for crc mismatch error on db_bench</p>
+	<p align="center">:octocat: debug for crc mismatch error on db_bench :octocat:</p>
 
 <!-- Update to dynamic badges -->
 </div>
@@ -16,14 +16,24 @@
 
 ### Overview (or Synopsis)
 `[Simple Description]`
+
 The cause of the crc mismatch problem is that the size of ***aligned_n*** for reading is smaller than the size required.
 
 To get into details, running db_bench, the mismatch error occuurred when reading in the index block of **59,596bytes(including 5bytes for CRC)**.
 
-The actual offset of index block is ***202488477***. Now, the code reads ***aligned_n(65536)*** from ***aligned_offset(2024865792)***. So, it cannot cover all index block and cause CRC mismatch problem
+The actual offset of index block is ***202488477***.
+Now, the code reads ***aligned_n(65536)*** from ***aligned_offset(2024865792)***. So, it cannot cover all index block and cause CRC mismatch problem
 
 The variable ***aligned_n*** sould be set to cover the whole block including CRC 32 bits.
 
+
+<div class="header" align="center">
+	<h2>
+		<a href="https://github.com/RockyLim92/RockDB_OCSSD_debug" title="(repository-name) temp">
+			<img alt="" src="https://github.com/RockyLim92/RocksDB_OCSSD_debug/blob/master/asset/rocky_icon.png" width="500px"/>
+		</a>
+	</h2>
+</div>
 
 
 
