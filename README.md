@@ -19,7 +19,7 @@
 
 The cause of the crc mismatch problem is that the size of ***aligned_n*** for reading is smaller than the size required.
 
-To get into details, running db_bench, the mismatch error occuurred when reading in the index block of **59,596bytes(including 5bytes for CRC)**.
+To get into details, running db_bench, the mismatch error occuurred when reading in the index block of **59,596bytes(including 5bytes for CRC)**. ( Maybe even read the other blocks will have similar problems. )
 
 The actual offset of index block is ***202488477***.
 Currently, the code reads ***aligned_n(65536)*** from <em>**aligned\_offset(2024865792)**</em>. So, it cannot cover all index block and cause CRC mismatch problem. 
