@@ -24,15 +24,16 @@ To get into details, running db_bench, the mismatch error occuurred when reading
 The actual offset of index block is ***202488477***.
 Currently, the code reads ***aligned_n(65536)*** from <em>**aligned\_offset(2024865792)**</em>. So, it cannot cover all index block and cause CRC mismatch problem. 
 
-The variable ***aligned_n*** sould be set to cover the whole block including CRC 32 bits.
-
 **( offset(202488477)+index block size(59596) ) < ( aligned_offset(2024865792) + aligned_n(65536) )**
 
+The variable ***aligned_n*** sould be set to cover the whole block including CRC 32 bits.
 
-<div class="header" align="center">
+
+
+<div class="header" align="left">
 	<h2>
 		<a href="https://github.com/RockyLim92/RockDB_OCSSD_debug" title="(repository-name) temp">
-			<img alt="" src="https://github.com/RockyLim92/RocksDB_OCSSD_debug/blob/master/asset/log.png" width="500px"/>
+			<img alt="" src="https://github.com/RockyLim92/RocksDB_OCSSD_debug/blob/master/asset/log.png" height="500px"/>
 		</a>
 	</h2>
 </div>
