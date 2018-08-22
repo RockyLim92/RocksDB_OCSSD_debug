@@ -14,7 +14,7 @@
 
 ---
 
-### Overview (or Synopsis)
+### Overview
 `[Simple Description]`
 
 The cause of the crc mismatch problem is that the size of ***aligned_n*** for reading is smaller than the size required.
@@ -24,7 +24,7 @@ To get into details, running db_bench, the mismatch error occuurred when reading
 The actual offset of index block is ***202488477***.
 Currently, the code reads ***aligned_n(65536)*** from <em>**aligned\_offset(2024865792)**</em>. So, it cannot cover all index block and cause CRC mismatch problem. 
 
-That is, **( offset(202488477)+index block size(59596) ) < ( aligned_offset(2024865792) + aligned_n(65536) )**
+That is, **aligned_offset(2024865792) + aligned_n(65536)** become less than **offset(202488477) + index block size(59596)**
 
 Here is part of related log.
 
@@ -64,7 +64,7 @@ $ sudo source run.sh
 ```
 
 ### Contents
-Files Which I modified
+Files which I modified
 - `env_nvm_file.cc`: when allocate variable ***alighed_n*** in ***NvmFile::Read***
 
 
