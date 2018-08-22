@@ -44,7 +44,6 @@ The variable ***aligned_n*** sould be set to cover the whole block including CRC
 
 
 ### Development
-- `[Env]`
 - gcc version at least 4.7(for C++11 support)
 - gflags
 - etc.
@@ -60,19 +59,19 @@ $ make rocks
 
 ### Usage  
 ```
-$ cd /nvm
+$ cd /nvm/
 $ sudo source run.sh
 ```
 
 ### Contents
 Files Which I modified
-- `env_nvm_file.cc`: when allocate variable *alighed_n* in *NvmFile::Read*
+- `env_nvm_file.cc`: when allocate variable ***alighed_n*** in ***NvmFile::Read***
 
 
 ### Acknowledgments
 
 
 ### References
-- [**rocksdb on OpenChannelSSD**](https://github.com/OpenChannelSSD/rocksdb)
+- [**rocksdb on OpenChannelSSD v5.4.6_ocssd**](https://github.com/OpenChannelSSD/rocksdb/tree/v5.4.6_ocssd)
 - etc.
 
